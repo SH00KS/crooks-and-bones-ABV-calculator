@@ -1,15 +1,15 @@
 
 	function calculateAlcoholByVolume(e) {
-	var og = document.getElementById('ogText').value;
-	var fg = document.getElementById('fgText').value;
+	var originalGravity = document.getElementById('originalGravityText').value;
+	var finalGravity = document.getElementById('finalGravityText').value;
 	
 	//Maths equation
-	var math = (1.05/0.79) * ((og - fg) / fg) * 100;
-	var roundedMath = parseFloat(math).toFixed(2); 
+	var abv = (1.05/0.79) * ((originalGravity - finalGravity) / finalGravity) * 100;
+	var roundedAbv = parseFloat(abv).toFixed(2); 
 
 	//alert(math);
 	var result = document.getElementById('ABVResult');
-	result.innerHTML = roundedMath;
+	result.innerHTML = roundedAbv + " %";
 	}
 
 	document.getElementById("calculateButton").onclick = calculateAlcoholByVolume;
