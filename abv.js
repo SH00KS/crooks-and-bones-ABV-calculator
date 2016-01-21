@@ -5,9 +5,11 @@
 	
 	//Maths equation
 	var math = (1.05/0.79) * ((og - fg) / fg) * 100;
+	var roundedMath = parseFloat(math).toFixed(2); 
+
 	//alert(math);
 	var result = document.getElementById('ABVResult');
-	result.innerHTML = math;
+	result.innerHTML = roundedMath;
 	}
 
 	document.getElementById("calculateButton").onclick = calculateAlcoholByVolume;
