@@ -14,17 +14,41 @@
   <![endif]-->
 </head>
 <body>
+	<div class="calculator">
+		<div>
+				<div class="calculator-head">
+					<h2>ABV CALCULATOR</h2>
+				</div>
+			<form>
+				<div>
+					<div>
+						<input class="calc-field" type="text" name="originalGravity" id="originalGravityText" value="Original Gravity (OG):"/>
+					</div>
+				</div>
 
-<form>
-Original Gravity (OG):<input type="text" name="originalGravity" id="originalGravityText"/> <br/>
-Final Gravity (FG)<input type="text" name="finalGravity" id="finalGravityText"/> <br/>
-<input type="button" id="calculateButton" value="Calculate"/>
-</form>
-<div id="alertBox"></div>
-<h3>Alcohol by Volume (ABV):</h3>
-<div id="ABVResult"></div>
-<h3>Calories per bottle (based on 750ml):</h3>
-<div id="caloriesResult"></div>
+				<div>
+					<div>
+						<input class="calc-field" type="text" name="finalGravity" id="finalGravityText" value="Final Gravity (FG)"/>
+					</div>
+				</div>
+
+				<div>
+					<input type="button" id="calculateButton" class="btn-class" value="Calculate"/>
+				</div>
+			</form>
+		</div>
+		<div class="row">
+		<div>
+			<div id="alertBox"></div>
+			<div id="ABVResult"></div>
+			<div id="caloriesResult"></div>
+		</div>
+	</div>
+	</div>
+
+	
+<!-- JS includes -->
 <script type="text/javascript" src="abv.js"></script>
+<!-- JS includes End-->
 </body>
 </html>
