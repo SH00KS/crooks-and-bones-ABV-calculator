@@ -36,30 +36,42 @@
     
     	if (!originalGravity || !finalGravity){
 				alertBox.innerHTML = ('Please fill in all of the fields.');
-				abvResult.classList.add("hideLabel");
-				caloriesResult.classList.add("hideLabel");
+				hideResults();
 				return false;
 			}
       
       	if (isNaN(finalGravity) || isNaN(originalGravity)){
 				alertBox.innerHTML = ('Only numbers allowed sorry.');
-				abvResult.classList.add("hideLabel");
-				caloriesResult.classList.add("hideLabel");
+				hideResults();
 				return false;
 			}
 		
 		if (finalGravity > originalGravity) {
 				alertBox.innerHTML = ('The final gravity should be lower than the original gravity.');
-				abvResult.classList.add("hideLabel");
-				caloriesResult.classList.add("hideLabel");
+				hideResults();
 				return false;
 			}
 			
 				alertBox.innerHTML = ('');
-				abvResult.classList.remove("hideLabel");
-				caloriesResult.classList.remove("hideLabel");
+				showResults();
 				return true;
 	}
+
+	function hideResults(){
+		var abvResult = document.getElementById('ABVResult');
+		var caloriesResult = document.getElementById('caloriesResult');
+		abvResult.classList.add("hideLabel");
+		caloriesResult.classList.add("hideLabel");
+	}
+
+	function showResults(){
+		var abvResult = document.getElementById('ABVResult');
+		var caloriesResult = document.getElementById('caloriesResult');
+		abvResult.classList.remove("hideLabel");
+		caloriesResult.classList.remove("hideLabel");
+	}
+
+
 
 document.getElementById("calculateButton").onclick = calculateAlcoholByVolume;
 	
