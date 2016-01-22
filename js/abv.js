@@ -30,6 +30,8 @@
 		var originalGravity = document.getElementById('originalGravityText').value;
 		var finalGravity = document.getElementById('finalGravityText').value;
 		var alertBox = document.getElementById('alertBox');
+		var abvResult = document.getElementById('ABVResult');
+		var caloriesResult = document.getElementById('caloriesResult');
 
     
     	if (!originalGravity || !finalGravity){
@@ -48,7 +50,9 @@
 			}
 			
 				alertBox.innerHTML = ('');
-			return true;
+				abvResult.classList.remove("hideLabel");
+				caloriesResult.classList.remove("hideLabel");
+				return true;
 	}
 
 document.getElementById("calculateButton").onclick = calculateAlcoholByVolume;
