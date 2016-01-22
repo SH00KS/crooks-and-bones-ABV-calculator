@@ -85,13 +85,13 @@ body {
 }
 
 #alertBox{
-	padding: 40px 5px 40px 5px;
-	color: #54db87;
+	padding: 20px 5px 40px 5px;
+	color: #ffbd4a;
 }
 
 .resultsLabel{
     color: #8c8c8c;
-    padding: 40px 5px 40px 5px;
+    padding: 10px 5px 40px 5px;
 }
 
 #caloriesResult{
