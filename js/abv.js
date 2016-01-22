@@ -72,7 +72,20 @@
 	}
 
 
-
 document.getElementById("calculateButton").onclick = calculateAlcoholByVolume;
-	
+
+document.onkeydown=function(evt){
+        var keyCode = evt ? (evt.which ? evt.which : evt.keyCode) : event.keyCode;
+        if(keyCode == 13)
+        {
+            calculateAlcoholByVolume();
+        }
+    }
+
+//document.getElementById("calculateButton").addEventListener("keydown", enterCheck(e){
+//	 if (e.keyCode === 13) {  //checks whether the pressed key is "Enter"
+//        calculateAlcoholByVolume(e);
+//    }
+//}); 
+
 	
