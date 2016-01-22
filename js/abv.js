@@ -36,16 +36,22 @@
     
     	if (!originalGravity || !finalGravity){
 				alertBox.innerHTML = ('Please fill in all of the fields.');
+				abvResult.classList.add("hideLabel");
+				caloriesResult.classList.add("hideLabel");
 				return false;
 			}
       
       	if (isNaN(finalGravity) || isNaN(originalGravity)){
 				alertBox.innerHTML = ('Only numbers allowed sorry.');
+				abvResult.classList.add("hideLabel");
+				caloriesResult.classList.add("hideLabel");
 				return false;
 			}
 		
 		if (finalGravity > originalGravity) {
 				alertBox.innerHTML = ('The final gravity should be lower than the original gravity.');
+				abvResult.classList.add("hideLabel");
+				caloriesResult.classList.add("hideLabel");
 				return false;
 			}
 			
