@@ -104,6 +104,14 @@ body {
     color: #54db87;
 }
 
+.showLabel{
+    display: block;
+}
+
+.hideLabel{
+    display: none;
+}
+
 .font-light {
     font-weight: 400;
 }
