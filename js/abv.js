@@ -7,14 +7,14 @@
 		var originalGravity = document.getElementById('originalGravityText').value;
 		var finalGravity = document.getElementById('finalGravityText').value;
 		
-		//Maths equation for ABV
+		//maths equation for ABV
 		var abv = (1.05/0.79) * ((originalGravity - finalGravity) / finalGravity) * 100;
 		var roundedAbv = parseFloat(abv).toFixed(2); 
 
 		var abvResult = document.getElementById('ABVResult');
 		abvResult.innerHTML = "<span class='resultsLabel'>Alcohol by Volume (ABV): <br></span>" + roundedAbv + " %";
 
-		//Maths equation for calories
+		//maths equation for calories
 		var calories = 26.40 * abv * 1.6;
 		var roundedCalories = parseFloat(calories).toFixed(2); 
 
@@ -24,7 +24,7 @@
 		var alertBox = document.getElementById('alertBox');
 	
 	}
-
+	//validates the inputs before running the calculations
 	function validateInput(){
 		
 		var originalGravity = document.getElementById('originalGravityText').value;
@@ -57,13 +57,14 @@
 				return true;
 	}
 
+	//hide the results
 	function hideResults(){
 		var abvResult = document.getElementById('ABVResult');
 		var caloriesResult = document.getElementById('caloriesResult');
 		abvResult.classList.add("hideLabel");
 		caloriesResult.classList.add("hideLabel");
 	}
-
+	//show the results
 	function showResults(){
 		var abvResult = document.getElementById('ABVResult');
 		var caloriesResult = document.getElementById('caloriesResult');
@@ -71,21 +72,17 @@
 		caloriesResult.classList.remove("hideLabel");
 	}
 
+	//runs the function calculateAlcoholByVolume function when the button is clicked
+	document.getElementById("calculateButton").onclick = calculateAlcoholByVolume;
 
-document.getElementById("calculateButton").onclick = calculateAlcoholByVolume;
+	//checks whether the pressed key is "Enter"
+	document.onkeydown=function(evt){
+	        var keyCode = evt ? (evt.which ? evt.which : evt.keyCode) : event.keyCode;
+	        if(keyCode == 13)
+	        {
+	            calculateAlcoholByVolume();
+	        }
+	    }
 
-document.onkeydown=function(evt){
-        var keyCode = evt ? (evt.which ? evt.which : evt.keyCode) : event.keyCode;
-        if(keyCode == 13)
-        {
-            calculateAlcoholByVolume();
-        }
-    }
-
-//document.getElementById("calculateButton").addEventListener("keydown", enterCheck(e){
-//	 if (e.keyCode === 13) {  //checks whether the pressed key is "Enter"
-//        calculateAlcoholByVolume(e);
-//    }
-//}); 
 
 	
